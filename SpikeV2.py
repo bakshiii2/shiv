@@ -34,7 +34,7 @@ redeem_codes_collection = db['redeem_code-git']
 
 # Bot Configuration
 TELEGRAM_BOT_TOKEN = '7856318383:AAHy_4dL5d-61UAzmIV7XVPzJg8e21R7Duk'
-ADMIN_USER_ID = 7372592479  # Replace with your admin user ID
+ADMIN_USER_ID = 5134043595  # Replace with your admin user ID
 COOLDOWN_PERIOD = timedelta(minutes=1)  # Cooldown period of 1 minute
 user_last_attack_time = {}  # Dictionary to store last attack time for users
 
