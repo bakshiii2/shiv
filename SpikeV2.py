@@ -2,10 +2,27 @@ import os
 import asyncio
 import random
 import string
+import logging
 from telegram import Update
 from telegram.ext import Application, CommandHandler, CallbackContext
 from pymongo import MongoClient
 from datetime import datetime, timedelta, timezone
+
+# Configure logging
+logging.basicConfig(
+    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
+    level=logging.INFO
+)
+logger = logging.getLogger(__name__)
+
+def log_message_periodically():
+    def periodic_logging():
+        while True:
+            logging.info("Virtual Venture OP DDOS")
+            time.sleep(300)  # 5 minutes in seconds
+    thread = threading.Thread(target=periodic_logging, daemon=True)
+    thread.start()
+
 
 # Database Configuration
 MONGO_URI = 'mongodb+srv://harry:Sachdeva@cluster1.b02ct.mongodb.net/?retryWrites=true&w=majority&appName=Cluster1'
@@ -17,7 +34,7 @@ redeem_codes_collection = db['redeem_code-git']
 
 # Bot Configuration
 TELEGRAM_BOT_TOKEN = '7856318383:AAHy_4dL5d-61UAzmIV7XVPzJg8e21R7Duk'
-ADMIN_USER_ID = 5134043595  # Replace with your admin user ID
+ADMIN_USER_ID = 7372592479  # Replace with your admin user ID
 COOLDOWN_PERIOD = timedelta(minutes=1)  # Cooldown period of 1 minute
 user_last_attack_time = {}  # Dictionary to store last attack time for users
 
@@ -420,7 +437,9 @@ def main():
     application.add_handler(CommandHandler("help", help_command))
     application.add_handler(CommandHandler("cleanup", cleanup))
 
+    # Run the bot
     application.run_polling()
+    logger.info("Bot is running.")
 
 if __name__ == '__main__':
     main()
