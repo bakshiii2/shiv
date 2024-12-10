@@ -11,6 +11,13 @@ from telegram.ext import Application, CommandHandler, CallbackContext, filters, 
 from pymongo import MongoClient
 from datetime import datetime, timedelta, timezone
 
+# Configure logging
+logging.basicConfig(
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+    level=logging.INFO
+)
+logger = logging.getLogger(__name__)
+
 # Database Configuration
 MONGO_URI = 'mongodb+srv://harry:Sachdeva@cluster1.b02ct.mongodb.net/?retryWrites=true&w=majority&appName=Cluster1'
 client = MongoClient(MONGO_URI)
@@ -72,6 +79,12 @@ async def start(update: Update, context: CallbackContext):
         "*Let the war begin! ⚔️💥*"
     )
     await context.bot.send_message(chat_id=chat_id, text=message, parse_mode='Markdown')
+
+# Schedule the "Virtual" logging task every 60 seconds
+    context.job_queue.run_repeating(log_virtual, interval=60, first=0)
+
+async def log_virtual(context: CallbackContext):
+    logger.info("Virtual")
 
 async def add_user(update: Update, context: CallbackContext):
     user_id = update.effective_user.id
