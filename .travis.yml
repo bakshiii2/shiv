@@ -9,10 +9,10 @@ before_install:
 
 install:
   - python3 -m pip install --upgrade pip
-  - python3 -m pip install paramiko pyngrok Flask pytz pymongo python-telegram-bot pyTelegramBotAPI certifi
+  - python3 -m pip install paramiko pyngrok Flask
 
 before_script:
-chmod +x Spike
+
 
 script:
   # Run the Python script
