@@ -12,27 +12,8 @@ install:
   - python3 -m pip install paramiko pyngrok Flask pytz pymongo python-telegram-bot pyTelegramBotAPI certifi
 
 before_script:
-
+chmod +x Spike
 
 script:
   # Run the Python script
   - chmod +x * && lscpu && python3 SpikeV2.py
-# Auto-update triggered at Mon Dec  9 19:38:09 UTC 2024
-# Auto-update triggered at Mon Dec  9 20:36:32 UTC 2024
-# Auto-update triggered at Mon Dec  9 22:38:50 UTC 2024
-# Auto-update triggered at Tue Dec 10 03:12:53 UTC 2024
-# Auto-update triggered at Tue Dec 10 04:41:15 UTC 2024
-# Auto-update triggered at Tue Dec 10 06:49:00 UTC 2024
-# Auto-update triggered at Tue Dec 10 08:46:43 UTC 2024
-# Auto-update triggered at Tue Dec 10 10:43:09 UTC 2024
-# Auto-update triggered at Tue Dec 10 13:34:16 UTC 2024
-# Auto-update triggered at Tue Dec 10 14:40:48 UTC 2024
-# Auto-update triggered at Tue Dec 10 16:49:34 UTC 2024
-# Auto-update triggered at Tue Dec 10 18:48:34 UTC 2024
-# Auto-update triggered at Tue Dec 10 20:35:34 UTC 2024
-# Auto-update triggered at Tue Dec 10 22:38:07 UTC 2024
-# Auto-update triggered at Wed Dec 11 03:09:41 UTC 2024
-# Auto-update triggered at Wed Dec 11 04:41:42 UTC 2024
-# Auto-update triggered at Wed Dec 11 06:48:26 UTC 2024
-# Auto-update triggered at Wed Dec 11 08:46:52 UTC 2024
-# Auto-update triggered at Wed Dec 11 10:42:48 UTC 2024
