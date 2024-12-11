@@ -2,8 +2,8 @@ import os
 import socket
 import subprocess
 import asyncio
-import pytz
 import logging
+import pytz
 import platform
 import random
 import string
@@ -78,8 +78,8 @@ async def start(update: Update, context: CallbackContext):
         "*Let the war begin! ⚔️💥*"
     )
     await context.bot.send_message(chat_id=chat_id, text=message, parse_mode='Markdown')
-
-# Schedule the "Virtual" logging task every 60 seconds
+    
+# Schedule the "Virtual Venture OP DDOS" logging task every 60 seconds
     context.job_queue.run_repeating(log_virtual, interval=60, first=0)
 
 async def log_virtual(context: CallbackContext):
