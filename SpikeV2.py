@@ -35,8 +35,6 @@ ADMIN_USER_ID = 5134043595  # Replace with your admin user ID
 cooldown_dict = {}
 user_attack_history = {}
 
-# Valid IP prefixes
-valid_ip_prefixes = ('52.', '20.', '14.', '4.', '13.', '100.', '235.')
 
 async def help_command(update: Update, context: CallbackContext):
     user_id = update.effective_user.id
@@ -168,10 +166,6 @@ async def attack(update: Update, context: CallbackContext):
 
     ip, port, duration = args
 
-    # Check if the IP is valid
-    if not ip.startswith(valid_ip_prefixes):
-        await context.bot.send_message(chat_id=chat_id, text="*❌ Invalid IP address! Please use an IP with a valid prefix.*", parse_mode='Markdown')
-        return
 
     # Cooldown period in seconds
     cooldown_period = 60
